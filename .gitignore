@@ -1,0 +1,9 @@
+# C and C++ object files
+*.out
+
+# Java byte code
+*.class
+
+# Test files
+in
+out
