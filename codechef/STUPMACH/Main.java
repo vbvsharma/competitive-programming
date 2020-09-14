@@ -8,7 +8,7 @@ public class Main {
             int N = input.nextInt();
 
             int runningMin = Integer.MAX_VALUE;
-            int total = 0;
+            long total = 0;
 
             while (N-- > 0) {
                 int S = input.nextInt();
