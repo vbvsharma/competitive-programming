@@ -27,13 +27,11 @@ public:
         for (int i = 3; i <= n; i++) {
             for (int left = 1; left < i; left += 2) {
                 int right = i - left - 1;
-                for (auto nodeLeftIt = cache[left].begin();
-                        nodeLeftIt != cache[left].end(); ++nodeLeftIt) {
-                    for (auto nodeRightIt = cache[right].begin();
-                            nodeRightIt != cache[right].end(); ++nodeRightIt) {
+                for (auto nodeLeft : cache[left]) {
+                    for (auto nodeRight : cache[right]) {
                         TreeNode* root = new TreeNode();
-                        root->left = *nodeLeftIt;
-                        root->right = *nodeRightIt;
+                        root->left = nodeLeft;
+                        root->right = nodeRight;
                         cache[i].push_back(root);
                     }
                 }
