@@ -22,19 +22,10 @@ class Solution {
         if (root == null)
             return 0;
         
-        return maxDepth(root, 1);
-    }
-    
-    private int maxDepth(Node root, int depth) {
-        if (root == null)
-            return depth;
-        
-        int maxDepth = depth;
-        
-        for (Node child : root.children) {
-            maxDepth = Math.max(maxDepth, maxDepth(child, depth + 1));
-        }
-        
-        return maxDepth;
+        int maxDepth = 0;
+        for (Node child : root.children)
+            maxDepth = Math.max(maxDepth, maxDepth(child));
+            
+        return 1 + maxDepth;
     }
 }
